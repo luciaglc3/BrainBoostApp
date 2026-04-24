@@ -22,16 +22,30 @@ def englisch_test():
 @route('/auswertung', method='POST')
 def auswertung():
     punkte = 0
+    gesamt = 0
 
-    for i in range(5):
-        antwort = request.forms.get(f'frage{i}')
-        
-        if antwort:
-            if antwort == "RICHTIGE_ANTWORT":  # kommt gleich besser
+    for key in request.forms:
+        if key.startswith("antwort"):
+            nummer = key.replace("antwort", "")
+
+            gegebene_antwort = request.forms.get("antwort" + nummer)
+            richtige_antwort = request.forms.get("richtig" + nummer)
+
+            gesamt += 1
+
+            if gegebene_antwort == richtige_antwort:
                 punkte += 2
 
-    return f"<h1>Du hast {punkte} Punkte!</h1>"
+    max_punkte = gesamt * 2
+
+    return f"""
+<h1>Ergebnis</h1>
+<p>Du hast {punkte} von {max_punkte} Punkten erreicht.</p>
+<a href="/englisch">Zurück zum Englisch Quiz</a>
+"""
+
+
+
 
 
 run(host='localhost', port=8080, debug=True, reloader=True)
-
