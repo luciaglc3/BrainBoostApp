@@ -26,3 +26,34 @@ fragen_englisch = [
 {"frage": "Which sentence is correct?", "antworten": ["She don't like it", "She doesn't like it", "She not like it", "She no like it"], "richtig": "She doesn't like it"}
 
 ]
+
+
+
+fragen_allgemein = [
+
+{"frage": "Welcher Planet ist der Sonne am nächsten?", "antworten": ["Venus", "Merkur", "Mars", "Erde"], "richtig": "Merkur"},
+{"frage": "Wer hat die Relativitätstheorie entwickelt?", "antworten": ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"], "richtig": "Albert Einstein"},
+{"frage": "In welchem Jahr begann der Zweite Weltkrieg?", "antworten": ["1914", "1939", "1945", "1929"], "richtig": "1939"},
+{"frage": "Welches Element hat das chemische Symbol 'O'?", "antworten": ["Gold", "Sauerstoff", "Silber", "Eisen"], "richtig": "Sauerstoff"},
+{"frage": "Welches Land hat die größte Fläche der Welt?", "antworten": ["USA", "China", "Kanada", "Russland"], "richtig": "Russland"},
+
+{"frage": "Wie viele Kontinente gibt es auf der Erde?", "antworten": ["5", "6", "7", "8"], "richtig": "7"},
+{"frage": "Welches Tier wird als König der Tiere bezeichnet?", "antworten": ["Tiger", "Löwe", "Elefant", "Bär"], "richtig": "Löwe"},
+{"frage": "Wie heißt die Hauptstadt von Frankreich?", "antworten": ["Madrid", "Berlin", "Paris", "Rom"], "richtig": "Paris"},
+{"frage": "Wie viele Tage hat ein Schaltjahr?", "antworten": ["365", "366", "364", "360"], "richtig": "366"},
+{"frage": "Welches Gas brauchen Menschen zum Atmen?", "antworten": ["Kohlenstoffdioxid", "Stickstoff", "Sauerstoff", "Helium"], "richtig": "Sauerstoff"},
+
+{"frage": "Wie heißt der größte Ozean der Welt?", "antworten": ["Atlantik", "Indischer Ozean", "Pazifik", "Arktischer Ozean"], "richtig": "Pazifik"},
+{"frage": "Welches Land ist für Pizza bekannt?", "antworten": ["Spanien", "Italien", "Frankreich", "Griechenland"], "richtig": "Italien"},
+{"frage": "Wie viele Stunden hat ein Tag?", "antworten": ["12", "24", "36", "48"], "richtig": "24"},
+{"frage": "Welches Instrument hat Tasten?", "antworten": ["Gitarre", "Klavier", "Trommel", "Violine"], "richtig": "Klavier"},
+{"frage": "Welche Farbe entsteht aus Blau und Gelb?", "antworten": ["Rot", "Grün", "Lila", "Orange"], "richtig": "Grün"},
+
+{"frage": "Wie viele Beine hat eine Spinne?", "antworten": ["6", "8", "10", "12"], "richtig": "8"},
+{"frage": "Welches Land hat die meisten Einwohner?", "antworten": ["USA", "Indien", "China", "Brasilien"], "richtig": "China"},
+{"frage": "Wie heißt der höchste Berg der Welt?", "antworten": ["K2", "Mount Everest", "Mont Blanc", "Zugspitze"], "richtig": "Mount Everest"},
+{"frage": "Welches Tier kann fliegen?", "antworten": ["Hund", "Katze", "Adler", "Elefant"], "richtig": "Adler"},
+{"frage": "Wie heißt unsere Galaxie?", "antworten": ["Andromeda", "Milchstraße", "Orion", "Sonne"], "richtig": "Milchstraße"}
+
+]
+
