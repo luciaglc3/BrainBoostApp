@@ -82,7 +82,7 @@
             <p>Teste dein Wissen in Zahlen, Rechnen und Logik.</p>
         </a>
 
-        <a href="/quiz/allgemein" class="karte">
+        <a href="/allgemeinwissen" class="karte">
             <div class="icon">🌍</div>
             <h2>Allgemeinwissen</h2>
             <p>Fragen zu Ländern, Natur, Geschichte und mehr.</p>
