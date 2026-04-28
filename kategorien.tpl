@@ -76,7 +76,7 @@
 
     <div class="karten-container">
 
-        <a href="/quiz/mathe" class="karte">
+        <a href="/mathe" class="karte">
             <div class="icon">➗</div>
             <h2>Mathematik</h2>
             <p>Teste dein Wissen in Zahlen, Rechnen und Logik.</p>
