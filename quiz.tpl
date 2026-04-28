@@ -228,7 +228,7 @@
         </div>
 
         <form action="/auswertung" method="post">
-
+        <input type="hidden" name ="kategorie" value={{kategorie}}">
             % for i, frage in enumerate(fragen):
             <div class="frage-box">
                 <div class="frage-title">
