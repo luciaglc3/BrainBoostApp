@@ -10,7 +10,7 @@ def startseite():
 def kategorien():
     return template('kategorien')
 
-@route('/quiz/allgemein')
+@route('/allgemeinwissen')
 def allgemein():
     fragen = random.sample(fragen_allgemein, 10)
     return template('quiz', titel="Allgemeinwissen Quiz", fragen=fragen)
