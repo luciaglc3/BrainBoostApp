@@ -216,8 +216,8 @@
     </div>
 
     <div class="hero">
-        <h1>Englisch <span>Quiz</span></h1>
-        <p>Teste dein Englisch und verbessere deine Kenntnisse.</p>
+        <h1>{{titel}}</h1>
+        <p>Teste dein Wissen und verbessere deine Kenntnisse.</p>
     </div>
 
     <div class="quiz-container">
