@@ -228,7 +228,7 @@
 #progress-fill {
     height: 100%;
     width: 0%;
-    background: #ffc400;
+    background: #00ff88;
     transition: width 0.3s;
 }
 
@@ -245,8 +245,8 @@
 
         <div class="navlinks">
             <a href="/">Startseite</a>
-            <a href="/mathe">Mathe Quiz</a>
-            <a href="/englisch">Englisch Quiz</a>
+            <a href="/mathe">Mathe</a>
+            <a href="/englisch">Englisch</a>
             <a href="/allgemeinwissen">Allgemeinwissen</a>
         </div>
 
