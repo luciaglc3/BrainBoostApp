@@ -197,6 +197,44 @@
                 width: 92%;
             }
         }
+
+
+.sticky-progress {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: #071a33;
+    padding: 15px 8%;
+    border-bottom: 2px solid #ffc400;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+.progress-top {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 16px;
+    background: #1b3a66;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #ffc400;
+    transition: width 0.3s;
+}
+
+
+
+
     </style>
 </head>
 
@@ -214,6 +252,19 @@
 
         <a class="result-btn" href="/ergebnisse">Ergebnisse</a>
     </div>
+
+<div class="sticky-progress">
+    <div class="progress-top">
+        <span>Fortschritt: <span id="progress-text">0 / 20</span></span>
+        <span id="progress-percent">0%</span>
+    </div>
+
+    <div class="progress-bar">
+        <div id="progress-fill"></div>
+    </div>
+</div>
+
+
 
     <div class="hero">
         <h1>{{titel}}</h1>
@@ -255,6 +306,28 @@
         </div>
 
     </div>
+
+
+<script>
+function updateProgress() {
+    let answered = document.querySelectorAll('input[type="radio"]:checked').length;
+    let total = 20;
+
+    let percent = Math.round((answered / total) * 100);
+
+    document.getElementById("progress-fill").style.width = percent + "%";
+    document.getElementById("progress-text").innerText = answered + " / " + total;
+    document.getElementById("progress-percent").innerText = percent + "%";
+}
+
+document.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.addEventListener('change', updateProgress);
+});
+</script>
+
+
+
+
 
 </body>
 </html>
