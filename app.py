@@ -1,6 +1,6 @@
 from bottle import route, run, template, request
 import random
-from fragen import fragen_englisch
+from fragen import fragen_englisch, fragen_allgemein
 
 @route('/')
 def startseite():
@@ -11,8 +11,9 @@ def kategorien():
     return template('kategorien')
 
 @route('/quiz/allgemein')
-def quiz_allgemeinwissen():
-    return template('allgemein')
+def allgemein():
+    fragen = random.sample(fragen_allgemein, 10)
+    return template('quiz', titel="Allgemeinwissen Quiz", fragen=fragen)
 
 @route('/englisch')
 def englisch_test():
