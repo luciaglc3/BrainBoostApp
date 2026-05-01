@@ -1,4 +1,4 @@
-from bottle import route, run, template, request
+from bottle import route, run, template, request, static_file
 import random
 from fragen import fragen_englisch, fragen_allgemein, fragen_mathe
 
@@ -19,6 +19,14 @@ def allgemein():
 def mathe():
 	fragen = random.sample(fragen_mathe, 20)
 	return template('quiz', titel="Mathe Quiz",kategorie="mathe", fragen=fragen)
+
+
+@route('/static/<filename>')
+def static_files(filename):
+	return static_file(filename, root='./static')
+
+
+
 
 
 @route('/englisch')
