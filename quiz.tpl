@@ -18,7 +18,7 @@
             <a href="/allgemeinwissen">Allgemeinwissen</a>
         </div>
 
-        <a class="result-btn" href="/ergebnisse">Ergebnisse</a>
+       
     </div>
 
     <div class="sticky-progress">
