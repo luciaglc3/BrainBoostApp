@@ -219,3 +219,20 @@ input[type="radio"] {
         width: 92%;
     }
 }
+#timer {
+    position: fixed;
+    top: 160px;
+    right: 20px;
+
+    background: #0f172a;
+    color: white;
+
+    padding: 6px 10px;
+    font-size: 14px;
+
+    border: 2px solid #facc15;
+    border-radius: 6px;
+
+    z-index: 9999;
+    font-weight: bold;
+}
