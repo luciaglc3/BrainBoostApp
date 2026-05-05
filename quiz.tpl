@@ -36,6 +36,7 @@
         <h1>{{titel}}</h1>
         <p>Teste dein Wissen und verbessere deine Kenntnisse.</p>
     </div>
+<div id="timer">Zeit: 08:00</div>
 
     <div class="quiz-container">
 
