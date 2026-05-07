@@ -4,107 +4,14 @@
     <meta charset="UTF-8">
     <title>BrainBoost</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #07182f, #123c69, #1b75bc);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    <link rel="stylesheet" href= "/static/style.css">
 
-        .page {
-            width: 90%;
-            max-width: 1100px;
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
 
-        .left {
-            flex: 1;
-        }
-
-        .badge {
-            background: rgba(255,255,255,0.15);
-            padding: 8px 14px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        h1 {
-            font-size: 58px;
-            margin: 0 0 15px 0;
-        }
-
-        h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #ffd84d;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #e6e6e6;
-        }
-
-        .features {
-            margin-top: 25px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .feature {
-            background: rgba(255,255,255,0.12);
-            padding: 15px;
-            border-radius: 14px;
-        }
-
-        .right {
-            width: 360px;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 25px;
-            padding: 35px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-            text-align: center;
-        }
-
-        .brain {
-            font-size: 70px;
-            margin-bottom: 15px;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 15px 30px;
-            background: #ffd000;
-            color: #1b1b1b;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 17px;
-            transition: 0.2s;
-        }
-
-        .button:hover {
-            background: #ffea70;
-            transform: scale(1.05);
-        }
-    </style>
 </head>
 
 <body>
 
-<div class="page">
+<div class="start-page">
 
     <div class="left">
         <div class="badge">Interaktive Lern-App für Schüler</div>
