@@ -1,11 +1,16 @@
+/* GLOBAL */
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #071a33;
     color: white;
 }
 
-.navbar {
+/* QUIZ-SEITE */
+.quiz-page {
+    background: #071a33;
+}
+
+.quiz-page .navbar {
     height: 80px;
     background: #08244a;
     display: flex;
@@ -14,29 +19,29 @@ body {
     border-bottom: 2px solid #173b70;
 }
 
-.logo {
+.quiz-page .logo {
     font-size: 26px;
     font-weight: bold;
     color: white;
     margin-right: 60px;
 }
 
-.logo span {
+.quiz-page .logo span {
     color: #ffc400;
 }
 
-.navlinks a {
+.quiz-page .navlinks a {
     color: white;
     text-decoration: none;
     margin: 0 20px;
     font-weight: bold;
 }
 
-.navlinks a:hover {
+.quiz-page .navlinks a:hover {
     color: #ffc400;
 }
 
-.result-btn {
+.quiz-page .result-btn {
     margin-left: auto;
     background: #ffc400;
     color: #071a33 !important;
@@ -45,25 +50,35 @@ body {
     font-weight: bold;
 }
 
-.sticky-progress {
+.quiz-page .sticky-progress {
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 9999;
     background: #071a33;
     padding: 15px 8%;
     border-bottom: 2px solid #ffc400;
     box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
-.progress-top {
+.quiz-page .progress-left {
+    flex: 1;
+    min-width: 0;
+}
+
+.quiz-page .progress-top {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 25px;
     font-weight: bold;
     margin-bottom: 8px;
     color: white;
 }
 
-.progress-bar {
+.quiz-page .progress-bar {
     width: 100%;
     height: 16px;
     background: #1b3a66;
@@ -71,35 +86,44 @@ body {
     overflow: hidden;
 }
 
-#progress-fill {
+.quiz-page #progress-fill {
     height: 100%;
     width: 0%;
     background: #ff8c00;
     transition: width 0.3s;
 }
 
-.hero {
+.quiz-page .timer-box {
+    background: #ff8c00;
+    color: #071a33;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.quiz-page .hero {
     padding: 70px 60px;
     background: linear-gradient(135deg, #071a33, #0b3266);
     border-bottom: 4px solid #ffc400;
 }
 
-.hero h1 {
+.quiz-page .hero h1 {
     font-size: 55px;
     margin: 0;
 }
 
-.hero p {
+.quiz-page .hero p {
     font-size: 22px;
     color: #c9d6e8;
 }
 
-.quiz-container {
+.quiz-page .quiz-container {
     width: 85%;
     margin: 50px auto;
 }
 
-.info-row {
+.quiz-page .info-row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
@@ -107,7 +131,7 @@ body {
     font-weight: bold;
 }
 
-.frage-box {
+.quiz-page .frage-box {
     background: #0d2b57;
     border: 2px solid #1d5fc2;
     border-radius: 18px;
@@ -116,7 +140,7 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-.frage-title {
+.quiz-page .frage-title {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -124,7 +148,7 @@ body {
     margin-bottom: 30px;
 }
 
-.nummer {
+.quiz-page .nummer {
     background: #ffc400;
     color: #071a33;
     width: 58px;
@@ -138,7 +162,7 @@ body {
     flex-shrink: 0;
 }
 
-.antwort {
+.quiz-page .antwort {
     display: block;
     background: #153866;
     border: 2px solid #254b80;
@@ -150,18 +174,18 @@ body {
     transition: 0.2s;
 }
 
-.antwort:hover {
+.quiz-page .antwort:hover {
     border-color: #ffc400;
     background: #1b477f;
 }
 
-input[type="radio"] {
+.quiz-page input[type="radio"] {
     margin-right: 15px;
     accent-color: #ffc400;
     transform: scale(1.3);
 }
 
-.submit-btn {
+.quiz-page .submit-btn {
     background: #ffc400;
     color: #071a33;
     border: none;
@@ -174,11 +198,11 @@ input[type="radio"] {
     margin-bottom: 50px;
 }
 
-.submit-btn:hover {
+.quiz-page .submit-btn:hover {
     background: #ffdd33;
 }
 
-.tipp {
+.quiz-page .tipp {
     clear: both;
     background: #0b2447;
     border: 1px solid #254b80;
@@ -189,50 +213,136 @@ input[type="radio"] {
     margin-bottom: 40px;
 }
 
+/* STARTSEITE */
+.start-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #07182f, #123c69, #1b75bc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-page .page {
+    width: 90%;
+    max-width: 1100px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.start-page .left {
+    flex: 1;
+}
+
+.start-page .badge {
+    background: rgba(255,255,255,0.15);
+    padding: 8px 14px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.start-page h1 {
+    font-size: 58px;
+    margin: 0 0 15px 0;
+}
+
+.start-page h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffd84d;
+}
+
+.start-page p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #e6e6e6;
+}
+
+.start-page .features {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.start-page .feature {
+    background: rgba(255,255,255,0.12);
+    padding: 15px;
+    border-radius: 14px;
+}
+
+.start-page .right {
+    width: 360px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    text-align: center;
+}
+
+.start-page .brain {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.start-page .button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 30px;
+    background: #ffd000;
+    color: #1b1b1b;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 17px;
+    transition: 0.2s;
+}
+
+.start-page .button:hover {
+    background: #ffea70;
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE */
 @media (max-width: 700px) {
-    .navbar {
+    .quiz-page .navbar {
         height: auto;
         flex-direction: column;
         align-items: flex-start;
         padding: 25px;
     }
 
-    .navlinks a {
+    .quiz-page .navlinks a {
         display: block;
         margin: 12px 0;
     }
 
-    .result-btn {
+    .quiz-page .result-btn {
         margin-left: 0;
         margin-top: 12px;
     }
 
-    .hero {
+    .quiz-page .hero {
         padding: 40px 25px;
     }
 
-    .hero h1 {
+    .quiz-page .hero h1 {
         font-size: 38px;
     }
 
-    .quiz-container {
+    .quiz-page .quiz-container {
         width: 92%;
     }
-}
-#timer {
-    position: fixed;
-    top: 160px;
-    right: 20px;
 
-    background: #0f172a;
-    color: white;
+    .start-page .page {
+        flex-direction: column;
+        padding: 30px 0;
+    }
 
-    padding: 6px 10px;
-    font-size: 14px;
-
-    border: 2px solid #facc15;
-    border-radius: 6px;
-
-    z-index: 9999;
-    font-weight: bold;
+    .start-page .right {
+        width: auto;
+    }
 }
