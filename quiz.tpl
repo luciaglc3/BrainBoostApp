@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 
-<body>
+<body class="quiz-page">
 
     <div class="navbar">
         <div class="logo">Brain<span>Boost</span></div>
@@ -22,13 +22,19 @@
     </div>
 
     <div class="sticky-progress">
-        <div class="progress-top">
-            <span>Fortschritt: <span id="progress-text">0 / 20</span></span>
-            <span id="progress-percent">0%</span>
+        <div class="progress-left">
+            <div class="progress-top">
+                <span>Fortschritt: <span id="progress-text">0 / 20</span></span>
+                <span id="progress-percent">0%</span>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
         </div>
 
-        <div class="progress-bar">
-            <div id="progress-fill"></div>
+        <div class="timer-box">
+            Zeit: <span id="timer">08:00</span>
         </div>
     </div>
 
@@ -36,7 +42,6 @@
         <h1>{{titel}}</h1>
         <p>Teste dein Wissen und verbessere deine Kenntnisse.</p>
     </div>
-<div id="timer">Zeit: 08:00</div>
 
     <div class="quiz-container">
 
