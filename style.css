@@ -346,3 +346,68 @@ body {
         width: auto;
     }
 }
+
+
+
+/* KATEGORIE */
+        
+        .kategorie-page {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #07182f, #123c69, #1b75bc);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .kategorie-page .container {
+            text-align: center;
+        }
+
+        .kategorie-page h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .kategorie-page .untertitel {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        .kategorie-page .karten-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .kategorie-page .karte {
+            width: 260px;
+            height: 200px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            padding: 25px;
+            text-decoration: none;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: 0.2s;
+        }
+
+        .kategorie-page .karte:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.25);
+        }
+
+        .kategorie-page .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .kategorie-page .zurueck {
+            display: inline-block;
+            margin-top: 30px;
+            color: #ffd000;
+            text-decoration: none;
+        }
+  
