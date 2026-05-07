@@ -34,7 +34,7 @@
         </div>
 
         <div class="timer-box">
-            Zeit: <span id="timer">08:00</span>
+             <span id="timer">08:00</span>
         </div>
     </div>
 
