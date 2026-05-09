@@ -63,40 +63,29 @@ def englisch():
 
 
 # AUSWERTUNG
+
+
 @route('/auswertung', method='POST')
 def auswertung():
 
     punkte = 0
-    gesamt = 0
+    gesamt_fragen = 20
+    max_punkte = gesamt_fragen * 2
 
     kategorie = request.forms.get("kategorie")
 
-    # Antworten überprüfen
-    for key in request.forms:
+    for i in range(gesamt_fragen):
 
-        if key.startswith("antwort"):
+        antwort = request.forms.get("antwort" + str(i))
+        richtig = request.forms.get("richtig" + str(i))
 
-            nummer = key.replace("antwort", "")
+        if antwort == richtig:
+            punkte += 2
 
-            antwort = request.forms.get("antwort" + nummer)
-            richtig = request.forms.get("richtig" + nummer)
+    prozent = int((punkte / max_punkte) * 100)
 
-            gesamt += 1
-
-            if antwort == richtig:
-                punkte += 2
-
-    max_punkte = gesamt * 2
-
-    if max_punkte > 0:
-        prozent = int((punkte / max_punkte) * 100)
-    else:
-        prozent = 0
-
-    # Analyse laden
     analyse = analyse_erstellen(kategorie, prozent)
 
-    # Ergebnisseite anzeigen
     return template(
         'ergebnis',
         punkte=punkte,
@@ -104,7 +93,6 @@ def auswertung():
         prozent=prozent,
         analyse=analyse
     )
-
 
 # SERVER STARTEN
 run(
