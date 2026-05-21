@@ -1,8 +1,18 @@
 from bottle import route, run, template, request, static_file
 import random
+import copy
 
 from fragen import fragen_englisch, fragen_allgemein, fragen_mathe
 from analyse import analyse_erstellen
+
+
+def quiz_fragen_vorbereiten(fragen_liste):
+    fragen = copy.deepcopy(random.sample(fragen_liste, 20))
+
+    for frage in fragen:
+        random.shuffle(frage["antworten"])
+
+    return fragen
 
 
 # STARTSEITE
@@ -17,7 +27,7 @@ def kategorien():
     return template('kategorien')
 
 
-# STATIC DATEIEN (CSS / JS)
+# STATIC DATEIEN
 @route('/static/<filename>')
 def static_files(filename):
     return static_file(filename, root='./static')
@@ -26,7 +36,7 @@ def static_files(filename):
 # ALLGEMEINWISSEN QUIZ
 @route('/allgemeinwissen')
 def allgemein():
-    fragen = random.sample(fragen_allgemein, 20)
+    fragen = quiz_fragen_vorbereiten(fragen_allgemein)
 
     return template(
         'quiz',
@@ -39,7 +49,7 @@ def allgemein():
 # MATHE QUIZ
 @route('/mathe')
 def mathe():
-    fragen = random.sample(fragen_mathe, 20)
+    fragen = quiz_fragen_vorbereiten(fragen_mathe)
 
     return template(
         'quiz',
@@ -52,7 +62,7 @@ def mathe():
 # ENGLISCH QUIZ
 @route('/englisch')
 def englisch():
-    fragen = random.sample(fragen_englisch, 20)
+    fragen = quiz_fragen_vorbereiten(fragen_englisch)
 
     return template(
         'quiz',
@@ -63,8 +73,6 @@ def englisch():
 
 
 # AUSWERTUNG
-
-
 @route('/auswertung', method='POST')
 def auswertung():
 
@@ -93,6 +101,7 @@ def auswertung():
         prozent=prozent,
         analyse=analyse
     )
+
 
 # SERVER STARTEN
 run(
