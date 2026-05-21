@@ -180,6 +180,86 @@ fragen_allgemein = [
 {"frage": "Wie viele Tage hat eine Woche?", "antworten": ["5", "6", "7", "8"], "richtig": "7"},
 {"frage": "Wie viele Jahreszeiten gibt es?", "antworten": ["2", "3", "4", "5"], "richtig": "4"},
 {"frage": "Welche Jahreszeit ist kalt?", "antworten": ["Sommer", "Winter", "Frühling", "Herbst"], "richtig": "Winter"},
-{"frage": "Welche Jahreszeit ist warm?", "antworten": ["Winter", "Herbst", "Sommer", "Frühling"], "richtig": "Sommer"}
+{"frage": "Welche Jahreszeit ist warm?", "antworten": ["Winter", "Herbst", "Sommer", "Frühling"], "richtig": "Sommer"},
+
+{"frage": "Welches Element hat die Ordnungszahl 79?", 
+"antworten": ["Silber", "Gold", "Platin", "Kupfer"], 
+"richtig": "Gold"},
+
+{"frage": "Wie viele Knochen hat ein erwachsener Mensch ungefähr?", 
+"antworten": ["106", "206", "306", "406"], 
+"richtig": "206"},
+
+{"frage": "Welcher Planet besitzt die meisten bekannten Monde?", 
+"antworten": ["Jupiter", "Saturn", "Neptun", "Mars"], 
+"richtig": "Saturn"},
+
+{"frage": "In welchem Jahr fiel die Berliner Mauer?", 
+"antworten": ["1987", "1989", "1991", "1993"], 
+"richtig": "1989"},
+
+{"frage": "Welches Land hat die größte Fläche der Welt?", 
+"antworten": ["Kanada", "China", "USA", "Russland"], 
+"richtig": "Russland"},
+
+{"frage": "Wie lautet die chemische Formel von Kochsalz?", 
+"antworten": ["NaCl", "KCl", "CO2", "H2SO4"], 
+"richtig": "NaCl"},
+
+{"frage": "Welcher Mathematiker entwickelte die Relativitätstheorie?", 
+"antworten": ["Newton", "Tesla", "Einstein", "Galilei"], 
+"richtig": "Einstein"},
+
+{"frage": "Welche Sprache hat weltweit die meisten Muttersprachler?", 
+"antworten": ["Englisch", "Spanisch", "Hindi", "Mandarin"], 
+"richtig": "Mandarin"},
+
+{"frage": "Wie nennt man den tiefsten Punkt der Erde im Ozean?", 
+"antworten": ["Marianengraben", "Pazifikrinne", "Atlantikspalte", "Tiefseegraben"], 
+"richtig": "Marianengraben"},
+
+{"frage": "Welche Einheit misst elektrischen Widerstand?", 
+"antworten": ["Volt", "Ampere", "Ohm", "Watt"], 
+"richtig": "Ohm"},
+
+{"frage": "Welches Organ produziert Insulin?", 
+"antworten": ["Leber", "Niere", "Bauchspeicheldrüse", "Herz"], 
+"richtig": "Bauchspeicheldrüse"},
+
+{"frage": "Wie viele Spieler hat eine Fußballmannschaft auf dem Feld?", 
+"antworten": ["9", "10", "11", "12"], 
+"richtig": "11"},
+
+{"frage": "Welches Metall ist bei Raumtemperatur flüssig?", 
+"antworten": ["Eisen", "Quecksilber", "Silber", "Aluminium"], 
+"richtig": "Quecksilber"},
+
+{"frage": "Welcher Kontinent hat die meisten Länder?", 
+"antworten": ["Europa", "Afrika", "Asien", "Südamerika"], 
+"richtig": "Afrika"},
+
+{"frage": "Was ist die Quadratwurzel von 144?", 
+"antworten": ["10", "11", "12", "13"], 
+"richtig": "12"},
+
+{"frage": "Welche Farbe absorbiert am meisten Sonnenlicht?", 
+"antworten": ["Weiß", "Gelb", "Schwarz", "Blau"], 
+"richtig": "Schwarz"},
+
+{"frage": "Welches Gas ist hauptsächlich für den Treibhauseffekt verantwortlich?", 
+"antworten": ["Sauerstoff", "Kohlenstoffdioxid", "Helium", "Wasserstoff"], 
+"richtig": "Kohlenstoffdioxid"},
+
+{"frage": "Wie heißt die größte Wüste der Erde?", 
+"antworten": ["Sahara", "Gobi", "Antarktis", "Arabische Wüste"], 
+"richtig": "Antarktis"},
+
+{"frage": "Welcher berühmte Physiker formulierte die drei Bewegungsgesetze?", 
+"antworten": ["Einstein", "Newton", "Tesla", "Bohr"], 
+"richtig": "Newton"},
+
+{"frage": "Wie viele Bits ergeben ein Byte?", 
+"antworten": ["4", "8", "16", "32"], 
+"richtig": "8"}
 
 ]
