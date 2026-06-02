@@ -21,11 +21,6 @@ def about():
     return template('about')
 
 
-@route('/about')
-def about_page():
-    return template('about')
-
-
 #STARTSEITE
 @route('/start')
 def startseite():
