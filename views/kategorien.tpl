@@ -52,7 +52,7 @@
 
         </div>
 
-        <a href="/" class="zurueck">
+        <a href="/start" class="zurueck">
             ← Zurück zur Startseite
         </a>
 
