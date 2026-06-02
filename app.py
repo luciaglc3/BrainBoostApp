@@ -15,11 +15,21 @@ def quiz_fragen_vorbereiten(fragen_liste):
     return fragen
 
 
-# STARTSEITE
+# EINLEITUNG
 @route('/')
+def about():
+    return template('about')
+
+
+@route('/about')
+def about_page():
+    return template('about')
+
+
+#STARTSEITE
+@route('/start')
 def startseite():
     return template('start')
-
 
 # KATEGORIEN
 @route('/kategorien')
@@ -57,7 +67,6 @@ def mathe():
         kategorie="mathe",
         fragen=fragen
     )
-
 
 # ENGLISCH QUIZ
 @route('/englisch')
