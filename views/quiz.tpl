@@ -12,6 +12,7 @@
         <div class="logo">Brain<span>Boost</span></div>
 
         <div class="navlinks">
+            <a href="/">Information</a>            
             <a href="/">Startseite</a>
             <a href="/mathe">Mathe</a>
             <a href="/englisch">Englisch</a>
