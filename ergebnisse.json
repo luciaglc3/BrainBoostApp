@@ -1,0 +1,24 @@
+[
+    {
+        "datum": "07.06.2026 13:40",
+        "kategorie": "allgemein",
+        "punkte": 10,
+        "max_punkte": 40,
+        "prozent": 25
+    },
+    {
+        "datum": "07.06.2026 13:49",
+        "kategorie": "allgemein",
+        "punkte": 8,
+        "max_punkte": 40,
+        "prozent": 20
+    },
+    {
+        "datum": "07.06.2026 14:00",
+        "name": "masoud",
+        "kategorie": "allgemein",
+        "punkte": 10,
+        "max_punkte": 40,
+        "prozent": 25
+    }
+]
