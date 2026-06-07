@@ -1,6 +1,10 @@
 from bottle import route, run, template, static_file, request
 import random
 import copy
+import json
+import os
+from datetime import datetime
+from speicher import ergebnis_speichern, ergebnisse_laden
 
 from fragen import fragen_englisch, fragen_allgemein, fragen_mathe
 from analyse import analyse_erstellen
@@ -16,7 +20,7 @@ def quiz_fragen_vorbereiten(fragen_liste):
     return fragen
 
 
-# Statische Dateien
+# --- Statische Dateien ---
 
 @route('/static/<filepath:path>')
 def static_files(filepath):
@@ -24,7 +28,7 @@ def static_files(filepath):
     return static_file(filepath, root='./static')
 
 
-# Seiten
+# --- Seiten ---
 
 @route('/')
 def about():
@@ -44,7 +48,7 @@ def kategorien():
     return template('kategorien')
 
 
-#Quiz-Routen
+# --- Quiz-Routen ---
 
 @route('/allgemeinwissen')
 def allgemein():
@@ -67,31 +71,49 @@ def englisch():
     return template('quiz', titel="Englisch Quiz", kategorie="englisch", fragen=fragen)
 
 
-#Auswertung
-
+# --- Auswertung ---
 @route('/auswertung', method='POST')
 def auswertung():
     """Wertet das Quiz aus und zeigt das Ergebnis."""
+
     gesamt_fragen = 20
     max_punkte = gesamt_fragen * 2
     punkte = 0
-    
+
     kategorie = request.forms.get("kategorie", "")
-    
+    name = request.forms.get("name", "Unbekannt")
+
     for i in range(gesamt_fragen):
+
         antwort = request.forms.get(f"antwort{i}")
         richtig = request.forms.get(f"richtig{i}")
-        
+
         if antwort and richtig and antwort == richtig:
             punkte += 2
-    
+
     prozent = int((punkte / max_punkte) * 100)
+
     analyse = analyse_erstellen(kategorie, prozent)
-    
-    return template('ergebnis', punkte=punkte, max_punkte=max_punkte, prozent=prozent, analyse=analyse)
 
+    ergebnis_speichern(
+        name,
+        kategorie,
+        punkte,
+        max_punkte,
+        prozent
+    )
 
-#Server starten
+    alle_ergebnisse = ergebnisse_laden()
+
+    return template(
+        'ergebnis',
+        punkte=punkte,
+        max_punkte=max_punkte,
+        prozent=prozent,
+        analyse=analyse,
+        ergebnisse=alle_ergebnisse
+    ) 
+# --- Server starten ---
 
 if __name__ == '__main__':
     run(host='localhost', port=8080, debug=True, reloader=True)
