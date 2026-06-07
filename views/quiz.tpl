@@ -12,14 +12,12 @@
         <div class="logo">Brain<span>Boost</span></div>
 
         <div class="navlinks">
-            <a href="/">Information</a>            
+            <a href="/">Information</a>
             <a href="/start">Startseite</a>
             <a href="/mathe">Mathe</a>
             <a href="/englisch">Englisch</a>
             <a href="/allgemeinwissen">Allgemeinwissen</a>
         </div>
-
-       
     </div>
 
     <div class="sticky-progress">
@@ -35,7 +33,7 @@
         </div>
 
         <div class="timer-box">
-             <span id="timer">08:00</span>
+            <span id="timer">08:00</span>
         </div>
     </div>
 
@@ -53,6 +51,13 @@
 
         <form action="/auswertung" method="post">
             <input type="hidden" name="kategorie" value="{{kategorie}}">
+
+            <input type="text"
+                   name="name"
+                   placeholder="Dein Name"
+                   required>
+
+            <br><br>
 
             % for i, frage in enumerate(fragen):
             <div class="frage-box">
