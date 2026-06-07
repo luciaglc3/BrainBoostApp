@@ -1,4 +1,4 @@
-from bottle import route, run, template, request, static_file
+from bottle import route, run, template, static_file, request
 import random
 import copy
 
@@ -7,110 +7,91 @@ from analyse import analyse_erstellen
 
 
 def quiz_fragen_vorbereiten(fragen_liste):
-    fragen = copy.deepcopy(random.sample(fragen_liste, 20))
-
+    """Wählt 20 zufällige Fragen aus und mischt die Antworten."""
+    fragen = copy.deepcopy(random.sample(fragen_liste, min(20, len(fragen_liste))))
+    
     for frage in fragen:
         random.shuffle(frage["antworten"])
-
+    
     return fragen
 
 
-# EINLEITUNG
+# Statische Dateien
+
+@route('/static/<filepath:path>')
+def static_files(filepath):
+    """Liefert statische Dateien (CSS, JS, Bilder)."""
+    return static_file(filepath, root='./static')
+
+
+# Seiten
+
 @route('/')
 def about():
+    """Einleitungsseite."""
     return template('about')
 
 
-#STARTSEITE
 @route('/start')
 def startseite():
+    """Startseite."""
     return template('start')
 
-# KATEGORIEN
+
 @route('/kategorien')
 def kategorien():
+    """Kategorienauswahl."""
     return template('kategorien')
 
 
-# STATIC DATEIEN
-@route('/static/<filename>')
-def static_files(filename):
-    return static_file(filename, root='./static')
+#Quiz-Routen
 
-
-# ALLGEMEINWISSEN QUIZ
 @route('/allgemeinwissen')
 def allgemein():
+    """Allgemeinwissen-Quiz starten."""
     fragen = quiz_fragen_vorbereiten(fragen_allgemein)
-
-    return template(
-        'quiz',
-        titel="Allgemeinwissen Quiz",
-        kategorie="allgemein",
-        fragen=fragen
-    )
+    return template('quiz', titel="Allgemeinwissen Quiz", kategorie="allgemein", fragen=fragen)
 
 
-# MATHE QUIZ
 @route('/mathe')
 def mathe():
+    """Mathe-Quiz starten."""
     fragen = quiz_fragen_vorbereiten(fragen_mathe)
+    return template('quiz', titel="Mathe Quiz", kategorie="mathe", fragen=fragen)
 
-    return template(
-        'quiz',
-        titel="Mathe Quiz",
-        kategorie="mathe",
-        fragen=fragen
-    )
 
-# ENGLISCH QUIZ
 @route('/englisch')
 def englisch():
+    """Englisch-Quiz starten."""
     fragen = quiz_fragen_vorbereiten(fragen_englisch)
-
-    return template(
-        'quiz',
-        titel="Englisch Quiz",
-        kategorie="englisch",
-        fragen=fragen
-    )
+    return template('quiz', titel="Englisch Quiz", kategorie="englisch", fragen=fragen)
 
 
-# AUSWERTUNG
+#Auswertung
+
 @route('/auswertung', method='POST')
 def auswertung():
-
-    punkte = 0
+    """Wertet das Quiz aus und zeigt das Ergebnis."""
     gesamt_fragen = 20
     max_punkte = gesamt_fragen * 2
-
-    kategorie = request.forms.get("kategorie")
-
+    punkte = 0
+    
+    kategorie = request.forms.get("kategorie", "")
+    
     for i in range(gesamt_fragen):
-
-        antwort = request.forms.get("antwort" + str(i))
-        richtig = request.forms.get("richtig" + str(i))
-
-        if antwort == richtig:
+        antwort = request.forms.get(f"antwort{i}")
+        richtig = request.forms.get(f"richtig{i}")
+        
+        if antwort and richtig and antwort == richtig:
             punkte += 2
-
+    
     prozent = int((punkte / max_punkte) * 100)
-
     analyse = analyse_erstellen(kategorie, prozent)
-
-    return template(
-        'ergebnis',
-        punkte=punkte,
-        max_punkte=max_punkte,
-        prozent=prozent,
-        analyse=analyse
-    )
+    
+    return template('ergebnis', punkte=punkte, max_punkte=max_punkte, prozent=prozent, analyse=analyse)
 
 
-# SERVER STARTEN
-run(
-    host='localhost',
-    port=8080,
-    debug=True,
-    reloader=True
-)
+#Server starten
+
+if __name__ == '__main__':
+    run(host='localhost', port=8080, debug=True, reloader=True)
