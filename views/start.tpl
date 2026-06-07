@@ -20,9 +20,11 @@
         <h2>Trainiere dein Wissen. Teste dich selbst. Verbessere dein Ergebnis.</h2>
 
         <p>
-            BrainBoost ist eine digitale Lern-App für Schülerinnen und Schüler der Klassenstufen 8 bis 10.
+            BrainBoost ist eine digitale Lern-App für Schülerinnen und Schüler der Oberstufe.
             Die App hilft dabei, Wissen in verschiedenen Bereichen wie Englisch, Mathematik und Allgemeinwissen
-            spielerisch zu überprüfen.
+            spielerisch zu überprüfen. Zu Beginn wird der Name eingegeben. Man hat je Kategorie jeweils 8 Minuten Zeit, um 20 Fragen zu beantworten. Das Ergebnis wird gespeichert,
+            sodass man einen Überblick über seinen Fortschritt hat. 
+
         </p>
 
         <p>
