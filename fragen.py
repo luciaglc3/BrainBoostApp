@@ -1,265 +1,513 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Jun  7 16:50:37 2026
+
+@author: masou
+"""
+
+# Grammar
 fragen_englisch = [
+    ("If I had known about the traffic, I ___ earlier.",
+     ["would leave", "will leave", "would have left", "had left"],
+     "would have left"),
 
-{"frage": "Choose the correct article: ___ apple", "antworten": ["a", "an", "the", "no article"], "richtig": "an"},
-{"frage": "Choose the correct article: ___ car", "antworten": ["a", "an", "the", "no article"], "richtig": "a"},
-{"frage": "What is the synonym of 'happy'?", "antworten": ["sad", "angry", "joyful", "tired"], "richtig": "joyful"},
-{"frage": "What is the synonym of 'big'?", "antworten": ["small", "large", "tiny", "short"], "richtig": "large"},
-{"frage": "What is the opposite of 'fast'?", "antworten": ["quick", "slow", "big", "strong"], "richtig": "slow"},
+    ("Not only ___ late, but he also forgot his notes.",
+     ["he arrived", "did he arrive", "he did arrive", "arrived he"],
+     "did he arrive"),
 
-{"frage": "What is the past of 'go'?", "antworten": ["goed", "went", "gone", "goes"], "richtig": "went"},
-{"frage": "What is the past of 'eat'?", "antworten": ["eated", "ate", "eaten", "eats"], "richtig": "ate"},
-{"frage": "What is the past of 'see'?", "antworten": ["seed", "saw", "seen", "see"], "richtig": "saw"},
-{"frage": "What is the past of 'run'?", "antworten": ["runned", "ran", "run", "running"], "richtig": "ran"},
-{"frage": "What is the past of 'have'?", "antworten": ["had", "has", "have", "haved"], "richtig": "had"},
+    ("Hardly ___ the meeting started when the alarm went off.",
+     ["had", "has", "did", "was"],
+     "had"),
 
-{"frage": "Which sentence is correct?", "antworten": ["He go to school", "He goes to school", "He going school", "He gone school"], "richtig": "He goes to school"},
-{"frage": "Which sentence is correct?", "antworten": ["She have a dog", "She has a dog", "She having a dog", "She haves a dog"], "richtig": "She has a dog"},
-{"frage": "Which sentence is correct?", "antworten": ["They is happy", "They are happy", "They am happy", "They be happy"], "richtig": "They are happy"},
-{"frage": "Which sentence is correct?", "antworten": ["I is tired", "I are tired", "I am tired", "I be tired"], "richtig": "I am tired"},
-{"frage": "Which sentence is correct?", "antworten": ["We has fun", "We have fun", "We having fun", "We haves fun"], "richtig": "We have fun"},
+    ("She wishes she ___ more time.",
+     ["has", "had", "would have", "having"],
+     "had"),
 
-{"frage": "Which word is a noun?", "antworten": ["run", "beautiful", "dog", "quickly"], "richtig": "dog"},
-{"frage": "Which word is a verb?", "antworten": ["eat", "blue", "happy", "slow"], "richtig": "eat"},
-{"frage": "Which word is an adjective?", "antworten": ["run", "fast", "quickly", "eat"], "richtig": "fast"},
-{"frage": "Which word is an adverb?", "antworten": ["quickly", "run", "dog", "happy"], "richtig": "quickly"},
-{"frage": "Which word is a noun?", "antworten": ["house", "run", "quick", "slowly"], "richtig": "house"},
+    ("By next year they ___ the project for five years.",
+     ["will complete", "will have completed", "will have been working on", "complete"],
+     "will have been working on")
 
-{"frage": "Choose the correct plural: child → ?", "antworten": ["childs", "children", "childes", "childrens"], "richtig": "children"},
-{"frage": "Choose the correct plural: mouse → ?", "antworten": ["mouses", "mice", "mousees", "mices"], "richtig": "mice"},
-{"frage": "Choose the correct plural: man → ?", "antworten": ["mans", "men", "manes", "mens"], "richtig": "men"},
-{"frage": "Choose the correct plural: woman → ?", "antworten": ["womans", "women", "womens", "womanes"], "richtig": "women"},
-{"frage": "Choose the correct plural: tooth → ?", "antworten": ["tooths", "teeth", "toothes", "teeths"], "richtig": "teeth"},
+    ("The government introduced measures to ___ climate change.",
+     ["combat", "ignore", "predict", "avoid"],
+     "combat"),
 
-{"frage": "What is the correct form: She ___ playing.", "antworten": ["is", "are", "am", "be"], "richtig": "is"},
-{"frage": "What is the correct form: They ___ playing.", "antworten": ["is", "are", "am", "be"], "richtig": "are"},
-{"frage": "What is the correct form: I ___ playing.", "antworten": ["is", "are", "am", "be"], "richtig": "am"},
-{"frage": "What is the correct form: He ___ playing.", "antworten": ["is", "are", "am", "be"], "richtig": "is"},
-{"frage": "What is the correct form: We ___ playing.", "antworten": ["is", "are", "am", "be"], "richtig": "are"},
+    ("His argument was completely ___.",
+     ["convincing", "flawed", "beneficial", "reliable"],
+     "flawed"),
 
-{"frage": "Choose the correct word: I ___ a book.", "antworten": ["read", "reads", "reading", "readed"], "richtig": "read"},
-{"frage": "Choose the correct word: She ___ a book.", "antworten": ["read", "reads", "reading", "readed"], "richtig": "reads"},
-{"frage": "Choose the correct word: They ___ football.", "antworten": ["play", "plays", "playing", "played"], "richtig": "play"},
-{"frage": "Choose the correct word: He ___ football.", "antworten": ["play", "plays", "playing", "played"], "richtig": "plays"},
-{"frage": "Choose the correct word: I ___ to school.", "antworten": ["go", "goes", "going", "goed"], "richtig": "go"},
+    ("The company wants to ___ its influence abroad.",
+     ["expand", "reduce", "destroy", "shorten"],
+     "expand"),
 
-{"frage": "Which is correct?", "antworten": ["a hour", "an hour", "the hour", "no hour"], "richtig": "an hour"},
-{"frage": "Which is correct?", "antworten": ["a university", "an university", "the university", "no university"], "richtig": "a university"},
-{"frage": "Which is correct?", "antworten": ["a elephant", "an elephant", "the elephant", "no elephant"], "richtig": "an elephant"},
-{"frage": "Which is correct?", "antworten": ["a house", "an house", "the house", "no house"], "richtig": "a house"},
-{"frage": "Which is correct?", "antworten": ["a orange", "an orange", "the orange", "no orange"], "richtig": "an orange"},
+    ("The witness gave a very ___ account.",
+     ["detailed", "rough", "short", "limited"],
+     "detailed"),
 
-{"frage": "What is the translation of 'Haus'?", "antworten": ["car", "house", "dog", "tree"], "richtig": "house"},
-{"frage": "What is the translation of 'Baum'?", "antworten": ["tree", "house", "dog", "car"], "richtig": "tree"},
-{"frage": "What is the translation of 'Hund'?", "antworten": ["cat", "dog", "mouse", "horse"], "richtig": "dog"},
-{"frage": "What is the translation of 'Auto'?", "antworten": ["car", "bus", "bike", "train"], "richtig": "car"},
-{"frage": "What is the translation of 'Wasser'?", "antworten": ["water", "juice", "milk", "tea"], "richtig": "water"}
+    ("The report highlights often ___ issues.",
+     ["overlooked", "perfect", "solved", "finished"],
+     "overlooked")
 
+    ("'The wind whispered through the trees' is an example of...",
+     ["personification", "metaphor", "simile", "irony"],
+     "personification"),
+
+    ("'As brave as a lion' is a...",
+     ["simile", "metaphor", "hyperbole", "alliteration"],
+     "simile"),
+
+    ("'The city never sleeps' contains...",
+     ["personification", "alliteration", "oxymoron", "euphemism"],
+     "personification"),
+
+    ("'I've told you a million times' is...",
+     ["hyperbole", "metaphor", "simile", "alliteration"],
+     "hyperbole"),
+
+    ("'Peter Piper picked a peck of pickled peppers' is...",
+     ["alliteration", "simile", "symbolism", "irony"],
+     "alliteration")
+
+    ("The UK Parliament is located in...",
+     ["London", "Manchester", "Edinburgh", "Liverpool"],
+     "London"),
+
+    ("The American Dream refers to...",
+     [
+         "success through hard work",
+         "royal privilege",
+         "free education",
+         "military service"
+     ],
+     "success through hard work"),
+
+    ("The US President lives in the...",
+     ["White House", "Capitol", "Pentagon", "Congress"],
+     "White House"),
+
+    ("The Prime Minister is the head of government in...",
+     ["the UK", "Germany", "France", "Spain"],
+     "the UK"),
+
+    ("The Declaration of Independence was signed in...",
+     ["1776", "1492", "1918", "1945"],
+     "1776")
+
+    ("The phrase 'To what extent' requires...",
+     ["evaluation", "translation", "summary only", "description only"],
+     "evaluation"),
+
+    ("The author's tone is best described as...",
+     ["analytical", "musical", "mathematical", "silent"],
+     "analytical"),
+
+    ("The main purpose of an argumentative text is usually to...",
+     ["persuade", "entertain only", "translate", "summarize"],
+     "persuade"),
+
+    ("A counterargument is used to...",
+     ["address opposing views", "repeat the introduction", "end the text", "change the topic"],
+     "address opposing views"),
+
+    ("The conclusion should...",
+     ["summarize the main argument", "introduce new ideas", "add examples only", "change the thesis"],
+     "summarize the main argument")
 ]
 
 
 
-fragen_mathe = [
 
-{"frage": "Was ist 8 + 7?", "antworten": ["13", "14", "15", "16"], "richtig": "15"},
-{"frage": "Was ist 12 × 6?", "antworten": ["72", "66", "78", "68"], "richtig": "72"},
-{"frage": "Was ist 56 ÷ 8?", "antworten": ["6", "7", "8", "9"], "richtig": "7"},
-{"frage": "Was ist 15²?", "antworten": ["225", "215", "205", "235"], "richtig": "225"},
-{"frage": "Was ist √81?", "antworten": ["7", "8", "9", "10"], "richtig": "9"},
 
-{"frage": "Was ist 3/4 von 20?", "antworten": ["10", "12", "15", "16"], "richtig": "15"},
-{"frage": "Was ist 25% von 80?", "antworten": ["15", "20", "25", "30"], "richtig": "20"},
-{"frage": "Was ist 0,5 × 40?", "antworten": ["10", "15", "20", "25"], "richtig": "20"},
-{"frage": "Was ist 7²?", "antworten": ["42", "47", "49", "56"], "richtig": "49"},
-{"frage": "Was ist 100 − 37?", "antworten": ["63", "67", "73", "57"], "richtig": "63"},
 
-{"frage": "Was ist 12 × 12?", "antworten": ["124", "144", "132", "156"], "richtig": "144"},
-{"frage": "Was ist 144 ÷ 12?", "antworten": ["10", "11", "12", "13"], "richtig": "12"},
-{"frage": "Was ist 5³?", "antworten": ["25", "75", "125", "150"], "richtig": "125"},
-{"frage": "Was ist 60% von 50?", "antworten": ["20", "25", "30", "35"], "richtig": "30"},
-{"frage": "Was ist 18 + 27?", "antworten": ["45", "43", "44", "46"], "richtig": "45"},
 
-{"frage": "Was ist 72 ÷ 9?", "antworten": ["6", "7", "8", "9"], "richtig": "8"},
-{"frage": "Was ist 11 × 11?", "antworten": ["111", "121", "131", "141"], "richtig": "121"},
-{"frage": "Was ist 90 − 55?", "antworten": ["35", "45", "30", "40"], "richtig": "35"},
-{"frage": "Was ist 4 × 0?", "antworten": ["0", "4", "1", "2"], "richtig": "0"},
-{"frage": "Was ist 10% von 200?", "antworten": ["10", "20", "30", "40"], "richtig": "20"},
 
-{"frage": "Was ist 6 × 9?", "antworten": ["54", "56", "49", "64"], "richtig": "54"},
-{"frage": "Was ist 13 + 29?", "antworten": ["40", "41", "42", "43"], "richtig": "42"},
-{"frage": "Was ist 80 ÷ 10?", "antworten": ["6", "7", "8", "9"], "richtig": "8"},
-{"frage": "Was ist 9²?", "antworten": ["72", "81", "90", "99"], "richtig": "81"},
-{"frage": "Was ist 50% von 90?", "antworten": ["35", "40", "45", "50"], "richtig": "45"},
 
-{"frage": "Was ist 2³?", "antworten": ["4", "6", "8", "10"], "richtig": "8"},
-{"frage": "Was ist 30% von 100?", "antworten": ["20", "30", "40", "50"], "richtig": "30"},
-{"frage": "Was ist 5 × 14?", "antworten": ["60", "65", "70", "75"], "richtig": "70"},
-{"frage": "Was ist 99 − 44?", "antworten": ["45", "50", "55", "60"], "richtig": "55"},
-{"frage": "Was ist 36 ÷ 6?", "antworten": ["4", "5", "6", "7"], "richtig": "6"},
+fragen_mathe  = [
+    {
+        "frage": "Bestimme die Ableitung von f(x) = 3x^4 - 2x^2 + 5.",
+        "antworten": ["12x^3 - 4x", "7x^3 - 4x", "12x^4 - 4x", "3x^3 - 2x"],
+        "richtig": "12x^3 - 4x"
+    },
+    {
+        "frage": "Für welche x gilt f'(x)=0 bei f(x)=x^3-3x?",
+        "antworten": ["x = -1 und x = 1", "x = 0 und x = 3", "x = -3 und x = 3", "x = 1 und x = 3"],
+        "richtig": "x = -1 und x = 1"
+    },
+    {
+        "frage": "Welche Stammfunktion gehört zu f(x)=6x^2?",
+        "antworten": ["2x^3 + C", "18x + C", "6x^3 + C", "3x^2 + C"],
+        "richtig": "2x^3 + C"
+    },
+    {
+        "frage": "Berechne das Integral ∫ von 0 bis 2 von 3x² dx.",
+        "antworten": ["6", "8", "12", "24"],
+        "richtig": "8"
+    },
+    {
+        "frage": "Die Funktion f(x)=x²-4x+3 hat ihren Scheitelpunkt bei...",
+        "antworten": ["S(2|-1)", "S(-2|-1)", "S(2|1)", "S(4|3)"],
+        "richtig": "S(2|-1)"
+    },
+    {
+        "frage": "Welche Gleichung beschreibt eine Gerade mit Steigung 3 und y-Achsenabschnitt -2?",
+        "antworten": ["y = 3x - 2", "y = -2x + 3", "y = 3x + 2", "y = -3x - 2"],
+        "richtig": "y = 3x - 2"
+    },
+    {
+        "frage": "Löse die Gleichung e^x = 5.",
+        "antworten": ["x = ln(5)", "x = e/5", "x = 5e", "x = log(0)"],
+        "richtig": "x = ln(5)"
+    },
+    {
+        "frage": "Welche Nullstellen hat f(x)=x²-9?",
+        "antworten": ["x = -3 und x = 3", "x = 0 und x = 9", "x = -9 und x = 9", "x = 3"],
+        "richtig": "x = -3 und x = 3"
+    },
+    {
+        "frage": "Welche Aussage gilt für eine Funktion an einem Hochpunkt?",
+        "antworten": ["f'(x)=0 und f''(x)<0", "f'(x)=0 und f''(x)>0", "f'(x)>0", "f''(x)=0 immer"],
+        "richtig": "f'(x)=0 und f''(x)<0"
+    },
+    {
+        "frage": "Welche Aussage gilt für einen Wendepunkt?",
+        "antworten": ["f''(x)=0 mit Vorzeichenwechsel", "f'(x)=0 immer", "f(x)=0 immer", "f''(x)>0 immer"],
+        "richtig": "f''(x)=0 mit Vorzeichenwechsel"
+    },
 
-{"frage": "Was ist 2/5 von 50?", "antworten": ["10", "15", "20", "25"], "richtig": "20"},
-{"frage": "Was ist 16 × 2?", "antworten": ["30", "31", "32", "34"], "richtig": "32"},
-{"frage": "Was ist √64?", "antworten": ["6", "7", "8", "9"], "richtig": "8"},
-{"frage": "Was ist 200 − 125?", "antworten": ["65", "70", "75", "80"], "richtig": "75"},
-{"frage": "Was ist 3 × 15?", "antworten": ["35", "40", "45", "50"], "richtig": "45"},
+    {
+        "frage": "Gegeben sind die Vektoren a=(1,2,3) und b=(2,0,1). Berechne a·b.",
+        "antworten": ["5", "7", "8", "10"],
+        "richtig": "5"
+    },
+    {
+        "frage": "Wann stehen zwei Vektoren senkrecht aufeinander?",
+        "antworten": ["Wenn ihr Skalarprodukt 0 ist", "Wenn sie gleich lang sind", "Wenn sie parallel sind", "Wenn ihre Summe 0 ist"],
+        "richtig": "Wenn ihr Skalarprodukt 0 ist"
+    },
+    {
+        "frage": "Welche Länge hat der Vektor v=(3,4,0)?",
+        "antworten": ["5", "7", "12", "25"],
+        "richtig": "5"
+    },
+    {
+        "frage": "Welche Ebenenform ist die Normalenform?",
+        "antworten": ["n · (x - p) = 0", "x = p + t·u", "y = mx + b", "ax² + bx + c = 0"],
+        "richtig": "n · (x - p) = 0"
+    },
+    {
+        "frage": "Zwei Geraden im Raum können...",
+        "antworten": ["parallel, identisch, schneidend oder windschief sein", "nur parallel sein", "nur schneidend sein", "nie windschief sein"],
+        "richtig": "parallel, identisch, schneidend oder windschief sein"
+    },
 
-{"frage": "Was ist 1/2 von 48?", "antworten": ["22", "24", "26", "28"], "richtig": "24"},
-{"frage": "Was ist 75 + 25?", "antworten": ["90", "95", "100", "105"], "richtig": "100"},
-{"frage": "Was ist 1000 ÷ 100?", "antworten": ["1", "5", "10", "100"], "richtig": "10"},
-{"frage": "Was ist 14 × 3?", "antworten": ["38", "40", "42", "44"], "richtig": "42"},
-{"frage": "Was ist 20% von 150?", "antworten": ["20", "25", "30", "35"], "richtig": "30"},
+    {
+        "frage": "Eine faire Münze wird dreimal geworfen. Wie groß ist die Wahrscheinlichkeit für genau zweimal Kopf?",
+        "antworten": ["3/8", "1/2", "1/4", "1/8"],
+        "richtig": "3/8"
+    },
+    {
+        "frage": "Bei einer Binomialverteilung gilt n=10 und p=0,5. Was beschreibt P(X=3)?",
+        "antworten": ["Die Wahrscheinlichkeit für genau 3 Erfolge", "Die Wahrscheinlichkeit für höchstens 3 Erfolge", "Die Wahrscheinlichkeit für mindestens 3 Erfolge", "Den Erwartungswert"],
+        "richtig": "Die Wahrscheinlichkeit für genau 3 Erfolge"
+    },
+    {
+        "frage": "Der Erwartungswert einer Binomialverteilung ist...",
+        "antworten": ["E(X)=n·p", "E(X)=n+p", "E(X)=p/n", "E(X)=n-p"],
+        "richtig": "E(X)=n·p"
+    },
+    {
+        "frage": "Die Standardabweichung einer Binomialverteilung ist...",
+        "antworten": ["√(n·p·(1-p))", "n·p", "p·(1-p)", "√n+p"],
+        "richtig": "√(n·p·(1-p))"
+    },
+    {
+        "frage": "Was bedeutet P(A|B)?",
+        "antworten": ["Die Wahrscheinlichkeit von A unter der Bedingung B", "Die Wahrscheinlichkeit von A oder B", "Die Gegenwahrscheinlichkeit von A", "Die Wahrscheinlichkeit von A und nicht B"],
+        "richtig": "Die Wahrscheinlichkeit von A unter der Bedingung B"
+    },
 
-{"frage": "Was ist 6²?", "antworten": ["30", "36", "42", "48"], "richtig": "36"},
-{"frage": "Was ist 45 ÷ 5?", "antworten": ["7", "8", "9", "10"], "richtig": "9"},
-{"frage": "Was ist 17 + 18?", "antworten": ["33", "34", "35", "36"], "richtig": "35"},
-{"frage": "Was ist 8 × 8?", "antworten": ["56", "60", "64", "72"], "richtig": "64"},
-{"frage": "Was ist 120 − 45?", "antworten": ["65", "70", "75", "80"], "richtig": "75"},
-
-{"frage": "Was ist 10²?", "antworten": ["10", "20", "50", "100"], "richtig": "100"},
-{"frage": "Was ist 1/4 von 100?", "antworten": ["20", "25", "30", "40"], "richtig": "25"},
-{"frage": "Was ist 7 × 13?", "antworten": ["81", "84", "91", "98"], "richtig": "91"},
-{"frage": "Was ist 150 ÷ 3?", "antworten": ["40", "45", "50", "55"], "richtig": "50"},
-{"frage": "Was ist 33 + 67?", "antworten": ["90", "95", "100", "105"], "richtig": "100"}
-
+    {
+        "frage": "Welche Funktion wächst langfristig am schnellsten?",
+        "antworten": ["f(x)=e^x", "f(x)=x²", "f(x)=x", "f(x)=ln(x)"],
+        "richtig": "f(x)=e^x"
+    },
+    {
+        "frage": "Welche Gleichung beschreibt exponentielles Wachstum?",
+        "antworten": ["f(x)=a·b^x", "f(x)=mx+b", "f(x)=ax²", "f(x)=a/x"],
+        "richtig": "f(x)=a·b^x"
+    },
+    {
+        "frage": "Was ist die Ableitung von f(x)=e^x?",
+        "antworten": ["e^x", "x·e^x", "ln(x)", "1/x"],
+        "richtig": "e^x"
+    },
+    {
+        "frage": "Was ist die Ableitung von f(x)=ln(x)?",
+        "antworten": ["1/x", "ln(x)", "x", "e^x"],
+        "richtig": "1/x"
+    },
+    {
+        "frage": "Welche Bedingung muss bei einer Extremstelle normalerweise geprüft werden?",
+        "antworten": ["f'(x)=0", "f(x)=0", "x=0", "f''(x)=1"],
+        "richtig": "f'(x)=0"
+    }
 ]
+
+
+
 
 
 
 
 
 fragen_allgemein = [
-
-{"frage": "Was ist die Hauptstadt von Deutschland?", "antworten": ["Berlin", "Paris", "Rom", "Madrid"], "richtig": "Berlin"},
-{"frage": "Welcher Planet ist der Sonne am nächsten?", "antworten": ["Venus", "Merkur", "Mars", "Erde"], "richtig": "Merkur"},
-{"frage": "Wie viele Kontinente gibt es?", "antworten": ["5", "6", "7", "8"], "richtig": "7"},
-{"frage": "Welches Tier wird König der Tiere genannt?", "antworten": ["Tiger", "Löwe", "Elefant", "Bär"], "richtig": "Löwe"},
-{"frage": "Welche Farbe entsteht aus Blau und Gelb?", "antworten": ["Rot", "Grün", "Lila", "Orange"], "richtig": "Grün"},
-
-{"frage": "Wie viele Tage hat ein Jahr?", "antworten": ["360", "365", "366", "370"], "richtig": "365"},
-{"frage": "Welches Gas brauchen Menschen zum Atmen?", "antworten": ["Helium", "Stickstoff", "Sauerstoff", "Kohlenstoff"], "richtig": "Sauerstoff"},
-{"frage": "Was ist die Hauptstadt von Frankreich?", "antworten": ["Madrid", "Paris", "Rom", "Berlin"], "richtig": "Paris"},
-{"frage": "Wie viele Stunden hat ein Tag?", "antworten": ["12", "24", "36", "48"], "richtig": "24"},
-{"frage": "Welches Tier kann fliegen?", "antworten": ["Hund", "Katze", "Adler", "Elefant"], "richtig": "Adler"},
-
-{"frage": "Welches Land ist für Pizza bekannt?", "antworten": ["Spanien", "Italien", "Frankreich", "Griechenland"], "richtig": "Italien"},
-{"frage": "Wie heißt der größte Ozean?", "antworten": ["Atlantik", "Pazifik", "Indischer Ozean", "Arktischer Ozean"], "richtig": "Pazifik"},
-{"frage": "Wie viele Beine hat eine Spinne?", "antworten": ["6", "8", "10", "12"], "richtig": "8"},
-{"frage": "Wie heißt der höchste Berg der Welt?", "antworten": ["K2", "Mount Everest", "Mont Blanc", "Zugspitze"], "richtig": "Mount Everest"},
-{"frage": "Welches Land hat die meisten Einwohner?", "antworten": ["USA", "Indien", "China", "Brasilien"], "richtig": "China"},
-
-{"frage": "Wie heißt unsere Galaxie?", "antworten": ["Andromeda", "Milchstraße", "Orion", "Sonne"], "richtig": "Milchstraße"},
-{"frage": "Welches Instrument hat Tasten?", "antworten": ["Gitarre", "Klavier", "Trommel", "Violine"], "richtig": "Klavier"},
-{"frage": "Welche Farbe hat die Sonne?", "antworten": ["Blau", "Gelb", "Grün", "Rot"], "richtig": "Gelb"},
-{"frage": "Wie viele Minuten hat eine Stunde?", "antworten": ["30", "45", "60", "90"], "richtig": "60"},
-{"frage": "Welches Tier lebt im Wasser?", "antworten": ["Hund", "Fisch", "Katze", "Pferd"], "richtig": "Fisch"},
-
-{"frage": "Was ist die Hauptstadt von Spanien?", "antworten": ["Barcelona", "Madrid", "Valencia", "Sevilla"], "richtig": "Madrid"},
-{"frage": "Was ist die Hauptstadt von Italien?", "antworten": ["Mailand", "Rom", "Venedig", "Neapel"], "richtig": "Rom"},
-{"frage": "Was ist die Hauptstadt von Österreich?", "antworten": ["Salzburg", "Wien", "Graz", "Linz"], "richtig": "Wien"},
-{"frage": "Welcher Kontinent ist Deutschland?", "antworten": ["Asien", "Europa", "Afrika", "Amerika"], "richtig": "Europa"},
-{"frage": "Wie viele Monate hat ein Jahr?", "antworten": ["10", "11", "12", "13"], "richtig": "12"},
-
-{"frage": "Welches Tier bellt?", "antworten": ["Katze", "Hund", "Vogel", "Fisch"], "richtig": "Hund"},
-{"frage": "Welches Tier miaut?", "antworten": ["Hund", "Katze", "Kuh", "Schaf"], "richtig": "Katze"},
-{"frage": "Welches Tier gibt Milch?", "antworten": ["Hund", "Katze", "Kuh", "Huhn"], "richtig": "Kuh"},
-{"frage": "Welches Tier legt Eier?", "antworten": ["Kuh", "Hund", "Huhn", "Pferd"], "richtig": "Huhn"},
-{"frage": "Was ist ein Säugetier?", "antworten": ["Fisch", "Vogel", "Hund", "Insekt"], "richtig": "Hund"},
-
-{"frage": "Welche Farbe hat Gras?", "antworten": ["Blau", "Grün", "Gelb", "Rot"], "richtig": "Grün"},
-{"frage": "Welche Farbe hat der Himmel meist?", "antworten": ["Grün", "Blau", "Rot", "Gelb"], "richtig": "Blau"},
-{"frage": "Welche Farbe hat Blut?", "antworten": ["Blau", "Rot", "Grün", "Gelb"], "richtig": "Rot"},
-{"frage": "Welche Farbe hat Schnee?", "antworten": ["Schwarz", "Weiß", "Blau", "Grau"], "richtig": "Weiß"},
-{"frage": "Welche Farbe hat eine Banane?", "antworten": ["Rot", "Gelb", "Blau", "Grün"], "richtig": "Gelb"},
-
-{"frage": "Was trinkt man zum Frühstück oft?", "antworten": ["Wasser", "Milch", "Saft", "Kaffee"], "richtig": "Kaffee"},
-{"frage": "Was ist ein Getränk?", "antworten": ["Brot", "Wasser", "Apfel", "Käse"], "richtig": "Wasser"},
-{"frage": "Was ist Obst?", "antworten": ["Karotte", "Apfel", "Brot", "Fleisch"], "richtig": "Apfel"},
-{"frage": "Was ist Gemüse?", "antworten": ["Apfel", "Banane", "Karotte", "Fisch"], "richtig": "Karotte"},
-{"frage": "Was ist ein Fahrzeug?", "antworten": ["Stuhl", "Auto", "Tisch", "Bett"], "richtig": "Auto"},
-
-{"frage": "Wie viele Sekunden hat eine Minute?", "antworten": ["30", "45", "60", "90"], "richtig": "60"},
-{"frage": "Wie viele Tage hat eine Woche?", "antworten": ["5", "6", "7", "8"], "richtig": "7"},
-{"frage": "Wie viele Jahreszeiten gibt es?", "antworten": ["2", "3", "4", "5"], "richtig": "4"},
-{"frage": "Welche Jahreszeit ist kalt?", "antworten": ["Sommer", "Winter", "Frühling", "Herbst"], "richtig": "Winter"},
-{"frage": "Welche Jahreszeit ist warm?", "antworten": ["Winter", "Herbst", "Sommer", "Frühling"], "richtig": "Sommer"},
-
-{"frage": "Welches Element hat die Ordnungszahl 79?", 
-"antworten": ["Silber", "Gold", "Platin", "Kupfer"], 
-"richtig": "Gold"},
-
-{"frage": "Wie viele Knochen hat ein erwachsener Mensch ungefähr?", 
-"antworten": ["106", "206", "306", "406"], 
-"richtig": "206"},
-
-{"frage": "Welcher Planet besitzt die meisten bekannten Monde?", 
-"antworten": ["Jupiter", "Saturn", "Neptun", "Mars"], 
-"richtig": "Saturn"},
-
-{"frage": "In welchem Jahr fiel die Berliner Mauer?", 
-"antworten": ["1987", "1989", "1991", "1993"], 
-"richtig": "1989"},
-
-{"frage": "Welches Land hat die größte Fläche der Welt?", 
-"antworten": ["Kanada", "China", "USA", "Russland"], 
-"richtig": "Russland"},
-
-{"frage": "Wie lautet die chemische Formel von Kochsalz?", 
-"antworten": ["NaCl", "KCl", "CO2", "H2SO4"], 
-"richtig": "NaCl"},
-
-{"frage": "Welcher Mathematiker entwickelte die Relativitätstheorie?", 
-"antworten": ["Newton", "Tesla", "Einstein", "Galilei"], 
-"richtig": "Einstein"},
-
-{"frage": "Welche Sprache hat weltweit die meisten Muttersprachler?", 
-"antworten": ["Englisch", "Spanisch", "Hindi", "Mandarin"], 
-"richtig": "Mandarin"},
-
-{"frage": "Wie nennt man den tiefsten Punkt der Erde im Ozean?", 
-"antworten": ["Marianengraben", "Pazifikrinne", "Atlantikspalte", "Tiefseegraben"], 
-"richtig": "Marianengraben"},
-
-{"frage": "Welche Einheit misst elektrischen Widerstand?", 
-"antworten": ["Volt", "Ampere", "Ohm", "Watt"], 
-"richtig": "Ohm"},
-
-{"frage": "Welches Organ produziert Insulin?", 
-"antworten": ["Leber", "Niere", "Bauchspeicheldrüse", "Herz"], 
-"richtig": "Bauchspeicheldrüse"},
-
-{"frage": "Wie viele Spieler hat eine Fußballmannschaft auf dem Feld?", 
-"antworten": ["9", "10", "11", "12"], 
-"richtig": "11"},
-
-{"frage": "Welches Metall ist bei Raumtemperatur flüssig?", 
-"antworten": ["Eisen", "Quecksilber", "Silber", "Aluminium"], 
-"richtig": "Quecksilber"},
-
-{"frage": "Welcher Kontinent hat die meisten Länder?", 
-"antworten": ["Europa", "Afrika", "Asien", "Südamerika"], 
-"richtig": "Afrika"},
-
-{"frage": "Was ist die Quadratwurzel von 144?", 
-"antworten": ["10", "11", "12", "13"], 
-"richtig": "12"},
-
-{"frage": "Welche Farbe absorbiert am meisten Sonnenlicht?", 
-"antworten": ["Weiß", "Gelb", "Schwarz", "Blau"], 
-"richtig": "Schwarz"},
-
-{"frage": "Welches Gas ist hauptsächlich für den Treibhauseffekt verantwortlich?", 
-"antworten": ["Sauerstoff", "Kohlenstoffdioxid", "Helium", "Wasserstoff"], 
-"richtig": "Kohlenstoffdioxid"},
-
-{"frage": "Wie heißt die größte Wüste der Erde?", 
-"antworten": ["Sahara", "Gobi", "Antarktis", "Arabische Wüste"], 
-"richtig": "Antarktis"},
-
-{"frage": "Welcher berühmte Physiker formulierte die drei Bewegungsgesetze?", 
-"antworten": ["Einstein", "Newton", "Tesla", "Bohr"], 
-"richtig": "Newton"},
-
-{"frage": "Wie viele Bits ergeben ein Byte?", 
-"antworten": ["4", "8", "16", "32"], 
-"richtig": "8"}
-
+    {
+        "frage": "Welche Epoche der europäischen Geschichte wird hauptsächlich mit Humanismus, Wiedergeburt antiker Ideale und wissenschaftlichem Fortschritt verbunden?",
+        "antworten": ["Mittelalter", "Renaissance", "Romantik", "Aufklärung"],
+        "richtig": "Renaissance"
+    },
+    {
+        "frage": "Welche Staatsform beruht auf Gewaltenteilung, freien Wahlen und Grundrechten?",
+        "antworten": ["Diktatur", "Monarchie", "Demokratie", "Theokratie"],
+        "richtig": "Demokratie"
+    },
+    {
+        "frage": "Was beschreibt der Begriff Globalisierung am besten?",
+        "antworten": ["Abschottung einzelner Staaten", "Zunehmende weltweite Vernetzung", "Rückgang internationaler Kommunikation", "Ausschließlich militärische Zusammenarbeit"],
+        "richtig": "Zunehmende weltweite Vernetzung"
+    },
+    {
+        "frage": "Welche Organisation wurde nach dem Zweiten Weltkrieg zur Sicherung des Weltfriedens gegründet?",
+        "antworten": ["NATO", "UNO", "EU", "WTO"],
+        "richtig": "UNO"
+    },
+    {
+        "frage": "Was ist ein wesentliches Merkmal der Aufklärung?",
+        "antworten": ["Glaube an Vernunft und Kritikfähigkeit", "Ablehnung wissenschaftlichen Denkens", "Rückkehr zum Feudalismus", "Vorrang kirchlicher Dogmen"],
+        "richtig": "Glaube an Vernunft und Kritikfähigkeit"
+    },
+    {
+        "frage": "Was versteht man unter dem demografischen Wandel?",
+        "antworten": ["Veränderung der Bevölkerungsstruktur", "Zunahme der Erdrotation", "Abnahme der Artenvielfalt", "Veränderung der Erdplatten"],
+        "richtig": "Veränderung der Bevölkerungsstruktur"
+    },
+    {
+        "frage": "Welche wirtschaftliche Kennzahl misst den Gesamtwert aller produzierten Waren und Dienstleistungen eines Landes?",
+        "antworten": ["Inflationsrate", "Bruttoinlandsprodukt", "Arbeitslosenquote", "Leitzins"],
+        "richtig": "Bruttoinlandsprodukt"
+    },
+    {
+        "frage": "Was beschreibt Inflation?",
+        "antworten": ["Allgemeiner Anstieg des Preisniveaus", "Sinkende Staatsverschuldung", "Zunahme der Produktivität", "Rückgang der Geldmenge"],
+        "richtig": "Allgemeiner Anstieg des Preisniveaus"
+    },
+    {
+        "frage": "Welche Energiequelle zählt zu den erneuerbaren Energien?",
+        "antworten": ["Kohle", "Erdöl", "Windkraft", "Erdgas"],
+        "richtig": "Windkraft"
+    },
+    {
+        "frage": "Was ist ein zentrales Ziel nachhaltiger Entwicklung?",
+        "antworten": ["Ressourcenverbrauch ohne Begrenzung", "Ausgleich zwischen Ökologie, Ökonomie und Sozialem", "Ausschließlich wirtschaftliches Wachstum", "Abschaffung internationaler Kooperation"],
+        "richtig": "Ausgleich zwischen Ökologie, Ökonomie und Sozialem"
+    },
+    {
+        "frage": "Welche Revolution begann Ende des 18. Jahrhunderts in Frankreich?",
+        "antworten": ["Industrielle Revolution", "Französische Revolution", "Oktoberrevolution", "Neolithische Revolution"],
+        "richtig": "Französische Revolution"
+    },
+    {
+        "frage": "Was war ein zentrales Ziel der Französischen Revolution?",
+        "antworten": ["Abschaffung bürgerlicher Rechte", "Stärkung des Absolutismus", "Freiheit, Gleichheit und Brüderlichkeit", "Rückkehr zur Ständegesellschaft"],
+        "richtig": "Freiheit, Gleichheit und Brüderlichkeit"
+    },
+    {
+        "frage": "Was beschreibt der Begriff Industrialisierung?",
+        "antworten": ["Übergang von Agrar- zu Industriegesellschaften", "Rückkehr zur Subsistenzwirtschaft", "Abschaffung technischer Innovation", "Verkleinerung der Städte"],
+        "richtig": "Übergang von Agrar- zu Industriegesellschaften"
+    },
+    {
+        "frage": "Welche Aussage beschreibt den Kalten Krieg am besten?",
+        "antworten": ["Direkter Weltkrieg zwischen USA und UdSSR", "Ideologischer Konflikt zwischen Ost und West", "Krieg innerhalb Europas im Mittelalter", "Kolonialkrieg in Afrika"],
+        "richtig": "Ideologischer Konflikt zwischen Ost und West"
+    },
+    {
+        "frage": "Was bedeutet Föderalismus?",
+        "antworten": ["Zentralisierung aller Macht", "Aufteilung staatlicher Aufgaben zwischen Bund und Ländern", "Herrschaft einer Einzelperson", "Abschaffung regionaler Parlamente"],
+        "richtig": "Aufteilung staatlicher Aufgaben zwischen Bund und Ländern"
+    },
+    {
+        "frage": "Welche Funktion hat das Bundesverfassungsgericht?",
+        "antworten": ["Kontrolle der Verfassungsmäßigkeit", "Leitung der Bundesregierung", "Festlegung der Steuern allein", "Durchführung von Wahlen"],
+        "richtig": "Kontrolle der Verfassungsmäßigkeit"
+    },
+    {
+        "frage": "Was versteht man unter Gewaltenteilung?",
+        "antworten": ["Trennung von Legislative, Exekutive und Judikative", "Alle Macht beim Parlament", "Alle Macht beim Gericht", "Abschaffung staatlicher Institutionen"],
+        "richtig": "Trennung von Legislative, Exekutive und Judikative"
+    },
+    {
+        "frage": "Welche Institution beschließt in Deutschland Bundesgesetze maßgeblich mit?",
+        "antworten": ["Bundestag", "Europäische Zentralbank", "Bundeswehr", "UNESCO"],
+        "richtig": "Bundestag"
+    },
+    {
+        "frage": "Was ist eine Verfassung?",
+        "antworten": ["Grundlegende Ordnung eines Staates", "Ein Wirtschaftsvertrag", "Ein internationaler Zolltarif", "Eine Parteisatzung"],
+        "richtig": "Grundlegende Ordnung eines Staates"
+    },
+    {
+        "frage": "Was beschreibt der Begriff Rechtsstaat?",
+        "antworten": ["Staatliches Handeln ist an Recht und Gesetz gebunden", "Regierung darf ohne Kontrolle handeln", "Gerichte sind politisch weisungsgebunden", "Grundrechte gelten nur teilweise"],
+        "richtig": "Staatliches Handeln ist an Recht und Gesetz gebunden"
+    },
+    {
+        "frage": "Was ist eine Hypothese in der Wissenschaft?",
+        "antworten": ["Eine überprüfbare Annahme", "Eine bewiesene Tatsache ohne Prüfung", "Eine moralische Regel", "Eine mathematische Konstante"],
+        "richtig": "Eine überprüfbare Annahme"
+    },
+    {
+        "frage": "Was bedeutet empirische Forschung?",
+        "antworten": ["Forschung durch Beobachtung und Datenerhebung", "Forschung nur durch Meinung", "Forschung ohne Belege", "Forschung ausschließlich durch Spekulation"],
+        "richtig": "Forschung durch Beobachtung und Datenerhebung"
+    },
+    {
+        "frage": "Was beschreibt Kausalität?",
+        "antworten": ["Ursache-Wirkungs-Zusammenhang", "Zufällige Ähnlichkeit", "Zeitliche Reihenfolge ohne Zusammenhang", "Subjektive Bewertung"],
+        "richtig": "Ursache-Wirkungs-Zusammenhang"
+    },
+    {
+        "frage": "Was ist eine Korrelation?",
+        "antworten": ["Statistischer Zusammenhang zwischen Variablen", "Beweis für Ursache und Wirkung", "Ein politisches System", "Eine literarische Figur"],
+        "richtig": "Statistischer Zusammenhang zwischen Variablen"
+    },
+    {
+        "frage": "Welche Aussage zur Korrelation ist korrekt?",
+        "antworten": ["Korrelation beweist immer Kausalität", "Korrelation zeigt einen Zusammenhang, aber nicht automatisch Ursache", "Korrelation ist immer falsch", "Korrelation gibt es nur in der Physik"],
+        "richtig": "Korrelation zeigt einen Zusammenhang, aber nicht automatisch Ursache"
+    },
+    {
+        "frage": "Was beschreibt der Treibhauseffekt?",
+        "antworten": ["Erwärmung der Erde durch bestimmte Gase in der Atmosphäre", "Abkühlung der Erde durch Ozeane", "Entstehung von Erdbeben", "Bewegung der Kontinente"],
+        "richtig": "Erwärmung der Erde durch bestimmte Gase in der Atmosphäre"
+    },
+    {
+        "frage": "Welches Gas trägt wesentlich zum anthropogenen Klimawandel bei?",
+        "antworten": ["Kohlenstoffdioxid", "Helium", "Neon", "Argon"],
+        "richtig": "Kohlenstoffdioxid"
+    },
+    {
+        "frage": "Was bedeutet Biodiversität?",
+        "antworten": ["Vielfalt des Lebens", "Anzahl der Planeten", "Menge an Rohstoffen", "Temperatur der Atmosphäre"],
+        "richtig": "Vielfalt des Lebens"
+    },
+    {
+        "frage": "Was ist ein Ökosystem?",
+        "antworten": ["Zusammenwirken von Lebewesen und Umwelt", "Ein einzelnes Tier", "Nur ein Waldgebiet ohne Tiere", "Ein chemisches Element"],
+        "richtig": "Zusammenwirken von Lebewesen und Umwelt"
+    },
+    {
+        "frage": "Was beschreibt Urbanisierung?",
+        "antworten": ["Zunahme städtischer Bevölkerung und Räume", "Rückgang aller Städte", "Ausschließliche Landwirtschaft", "Verlagerung ins Weltall"],
+        "richtig": "Zunahme städtischer Bevölkerung und Räume"
+    },
+    {
+        "frage": "Was ist Migration?",
+        "antworten": ["Räumliche Verlagerung des Lebensmittelpunktes", "Ausschließlich Tourismus", "Geburtenrückgang", "Wirtschaftswachstum"],
+        "richtig": "Räumliche Verlagerung des Lebensmittelpunktes"
+    },
+    {
+        "frage": "Was versteht man unter Integration?",
+        "antworten": ["Einbindung von Menschen in gesellschaftliche Strukturen", "Vollständige Isolation", "Ausschluss politischer Teilhabe", "Abbau sozialer Kontakte"],
+        "richtig": "Einbindung von Menschen in gesellschaftliche Strukturen"
+    },
+    {
+        "frage": "Was beschreibt der Begriff Menschenrechte?",
+        "antworten": ["Universelle Rechte jedes Menschen", "Rechte nur für Staatsbürger", "Wirtschaftliche Verträge", "Regeln einzelner Parteien"],
+        "richtig": "Universelle Rechte jedes Menschen"
+    },
+    {
+        "frage": "Welche Aussage passt zur sozialen Marktwirtschaft?",
+        "antworten": ["Verbindung von freiem Markt und sozialem Ausgleich", "Vollständige Abschaffung des Marktes", "Alle Preise werden privat verboten", "Keine staatliche Regulierung"],
+        "richtig": "Verbindung von freiem Markt und sozialem Ausgleich"
+    },
+    {
+        "frage": "Was ist ein Monopol?",
+        "antworten": ["Ein Anbieter beherrscht einen Markt", "Viele Anbieter konkurrieren gleich stark", "Keine Nachfrage vorhanden", "Ein Staat ohne Regierung"],
+        "richtig": "Ein Anbieter beherrscht einen Markt"
+    },
+    {
+        "frage": "Was beschreibt Angebot und Nachfrage?",
+        "antworten": ["Grundmechanismus der Preisbildung", "Ausschließlich politische Wahlen", "Nur staatliche Verwaltung", "Ein biologischer Prozess"],
+        "richtig": "Grundmechanismus der Preisbildung"
+    },
+    {
+        "frage": "Was bedeutet Bruttoinlandsprodukt pro Kopf?",
+        "antworten": ["BIP geteilt durch Einwohnerzahl", "Steuern minus Ausgaben", "Export minus Import", "Arbeitslose geteilt durch Erwerbstätige"],
+        "richtig": "BIP geteilt durch Einwohnerzahl"
+    },
+    {
+        "frage": "Was beschreibt der Begriff Ressourcenknappheit?",
+        "antworten": ["Begrenztheit verfügbarer Mittel", "Unendliche Verfügbarkeit aller Güter", "Fehlen jeglicher Nachfrage", "Abschaffung wirtschaftlicher Entscheidungen"],
+        "richtig": "Begrenztheit verfügbarer Mittel"
+    },
+    {
+        "frage": "Was ist ein Primärsektor?",
+        "antworten": ["Landwirtschaft, Fischerei und Rohstoffgewinnung", "Industrieproduktion", "Dienstleistungen", "Digitale Medien"],
+        "richtig": "Landwirtschaft, Fischerei und Rohstoffgewinnung"
+    },
+    {
+        "frage": "Was ist ein Tertiärsektor?",
+        "antworten": ["Dienstleistungssektor", "Rohstoffsektor", "Landwirtschaft", "Bergbau"],
+        "richtig": "Dienstleistungssektor"
+    },
+    {
+        "frage": "Was beschreibt der Begriff Digitalisierung?",
+        "antworten": ["Umwandlung und Nutzung digitaler Prozesse und Daten", "Rückkehr zu analoger Verwaltung", "Abschaffung technischer Geräte", "Nur Herstellung von Papier"],
+        "richtig": "Umwandlung und Nutzung digitaler Prozesse und Daten"
+    },
+    {
+        "frage": "Was ist künstliche Intelligenz im Allgemeinen?",
+        "antworten": ["Technische Systeme, die Aufgaben mit lernähnlichen Verfahren lösen", "Eine biologische Pflanzenart", "Ein politisches Parlament", "Ein chemisches Gas"],
+        "richtig": "Technische Systeme, die Aufgaben mit lernähnlichen Verfahren lösen"
+    },
+    {
+        "frage": "Was ist ein Algorithmus?",
+        "antworten": ["Eine eindeutige Schrittfolge zur Lösung eines Problems", "Ein Zufallsereignis ohne Regel", "Ein literarisches Symbol", "Ein geografischer Raum"],
+        "richtig": "Eine eindeutige Schrittfolge zur Lösung eines Problems"
+    },
+    {
+        "frage": "Was beschreibt Datenschutz?",
+        "antworten": ["Schutz personenbezogener Daten", "Schutz von Wäldern", "Schutz von Währungen", "Schutz vor Naturkatastrophen"],
+        "richtig": "Schutz personenbezogener Daten"
+    },
+    {
+        "frage": "Was bedeutet Medienkompetenz?",
+        "antworten": ["Kritischer und reflektierter Umgang mit Medien", "Passiver Medienkonsum ohne Prüfung", "Verbot digitaler Kommunikation", "Ausschließlich technisches Programmieren"],
+        "richtig": "Kritischer und reflektierter Umgang mit Medien"
+    },
+    {
+        "frage": "Was sind Fake News?",
+        "antworten": ["Bewusst oder unbeabsichtigt verbreitete falsche Informationen", "Amtliche Gesetzestexte", "Wissenschaftliche Peer-Review-Artikel", "Statistische Rohdaten"],
+        "richtig": "Bewusst oder unbeabsichtigt verbreitete falsche Informationen"
+    },
+    {
+        "frage": "Was ist Propaganda?",
+        "antworten": ["Gezielte Beeinflussung von Meinungen", "Neutrale Datenerhebung", "Reine Unterhaltung ohne Absicht", "Mathematische Beweisführung"],
+        "richtig": "Gezielte Beeinflussung von Meinungen"
+    },
+    {
+        "frage": "Was beschreibt der Begriff Ideologie?",
+        "antworten": ["System von politischen oder gesellschaftlichen Grundüberzeugungen", "Chemische Verbindung", "Geometrische Figur", "Biologisches Organ"],
+        "richtig": "System von politischen oder gesellschaftlichen Grundüberzeugungen"
+    },
+    {
+        "frage": "Was ist Zivilgesellschaft?",
+        "antworten": ["Gesellschaftliche Akteure außerhalb von Staat und Markt", "Nur die Regierung", "Nur das Militär", "Nur Unternehmen"],
+        "richtig": "Gesellschaftliche Akteure außerhalb von Staat und Markt"
+    },
+    {
+        "frage": "Was beschreibt der Begriff Partizipation?",
+        "antworten": ["Aktive Beteiligung an gesellschaftlichen oder politischen Prozessen", "Vollständiger Rückzug aus der Gesellschaft", "Ausschließlich wirtschaftlicher Gewinn", "Biologische Zellteilung"],
+        "richtig": "Aktive Beteiligung an gesellschaftlichen oder politischen Prozessen"
+    }
 ]
