@@ -36,7 +36,7 @@ def about():
     return template('about')
     
 @route('/about')
-def about_page()
+def about_page():
     return template('about')
 
 @route('/start')
