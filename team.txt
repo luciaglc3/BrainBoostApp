@@ -1,0 +1,3 @@
+Lucia Galunic: Templates, HTML, CSS, Design
+Masoud Koro: Python, Bottle-Routen und Backend-Logik
+Dorsa Erfanian Daneshvar: JavaScript-Funktionen und interaktive Elemente
