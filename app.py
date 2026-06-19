@@ -34,7 +34,10 @@ def static_files(filepath):
 def about():
     """Einleitungsseite."""
     return template('about')
-
+    
+@route('/about')
+def about_page()
+    return template('about')
 
 @route('/start')
 def startseite():
